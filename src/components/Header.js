@@ -3,8 +3,13 @@ import {
     BrowserRouter as Router,
     Routes,
     Route,
-    Link
+    Link,
 } from 'react-router-dom';
+import Home from '../pages/home/Home'
+import Deals from '../pages/deals/Deals'
+import Groups from '../pages/groups/Groups'
+import Sell from '../pages/sell/Sell'
+import Account from '../pages/account/Account'
 
 const Header = (props) => {
     const [searchWord, setSearchWord] = useState();
@@ -36,7 +41,7 @@ const Header = (props) => {
             }>
                 <li>
                     <Link to='/'>
-                        <h1 className='py-1 hover:underline'>Home</h1>
+                        <h1 className={'py-1 hover:underline'}>Home</h1>
                     </Link>
                 </li>
                 <li>
@@ -71,7 +76,7 @@ const Header = (props) => {
                             value={searchWord}
                             onChange={ (event) => setSearchWord(event.target.value)}
                             placeholder='Search'
-                            className='bg-[#E5DBD3] h-8 w-full md:w-24 lg:w-full md:rounded-full px-2 focus:outline-0 placeholder:text-white'
+                            className='bg-[#E5DBD3] h-6 lg:h-8 w-full md:w-24 lg:w-full md:rounded-full px-2 focus:outline-0 placeholder:text-white'
                         />
                     </form>
                 </li>
@@ -100,6 +105,15 @@ const Header = (props) => {
             </button>
         </nav>
         </header>
+        <main>
+            <Routes>
+                <Route exact path='/' element={< Home />}></Route>
+                <Route exact path='/deals' element={< Deals />}></Route>
+                <Route exact path='/groups' element={< Groups />}></Route>
+                <Route exact path='/sell' element={< Sell />}></Route>
+                <Route exact path={`/account/${props.username}`} element={< Account />}></Route>
+            </Routes>
+        </main>
     </Router>
   )
 }
