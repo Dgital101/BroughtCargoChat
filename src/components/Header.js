@@ -20,43 +20,43 @@ const Header = (props) => {
     }
   return (
     <Router >
-        <header className='flex justify-between items-center bg-[#FEF9F3] h-16 p-4'>
+        <header className='flex justify-between items-center bg-[#FEF9F3] h-16 p-4 md:h-24'>
             <Link to="/">
             <img
             src='/assets/images/BroughtCargo-logo.png'
             alt='BroughtCargo Logo'
-            className='w-24 h-16 p-0'
+            className='w-24 h-16 p-0 md:w-40 md:h-24 lg:w-56 lg:h-36'
         />
         </Link>
-        <nav className='md:flex text-black text-lg font-semibold'>
+        <nav className='md:flex text-black text-lg lg:text-2xl font-semibold'>
             {/* Desktop navigation */}
             <ul className={ 
                 displayMobileMenu ? "absolute left-0 top-16 block w-full px-4 bg-[#FEF9F3]" :
-                'hidden md:flex'
+                'hidden md:flex items-center gap-6'
             }>
                 <li>
                     <Link to='/'>
-                        <h1 className='py-1'>Home</h1>
+                        <h1 className='py-1 hover:underline'>Home</h1>
                     </Link>
                 </li>
                 <li>
                     <Link to='/deals'>
-                        <h1 className='py-1'>Deals</h1>
+                        <h1 className='py-1 hover:underline'>Deals</h1>
                     </Link>
                 </li>
                 <li>
                     <Link to='/groups'>
-                        <h1 className='py-1'>Find a Group</h1>
+                        <h1 className='py-1 hover:underline'>Find a Group</h1>
                     </Link>
                 </li>
                 <li>
                     <Link to='/sell'>
-                        <h1 className='py-1'>Sell</h1>
+                        <h1 className='py-1 hover:underline'>Sell</h1>
                     </Link>
                 </li>
                 <li>
                     <form 
-                        className='flex justify-center items-center  py-1 bg-[#E5DBD3] md:rounded-full rounded-sm w-full h-6 pd-2'
+                        className='flex justify-center items-center  py-1 bg-[#E5DBD3] md:rounded-full rounded-sm w-full lg:w-64 h-6 lg:h-8 pd-2'
                         onSubmit={searchSubmit}>
                         <button 
                             type="submit"
@@ -64,14 +64,14 @@ const Header = (props) => {
                             <img 
                                 src='/assets/images/search-icon.png' 
                                 alt='search button'
-                                className='w-4 h-4 mx-2'
+                                className='w-4 h-4 lg:w-6 lg:h-6 mx-2'
                             />
                         </button>
                         <input
                             value={searchWord}
                             onChange={ (event) => setSearchWord(event.target.value)}
                             placeholder='Search'
-                            className='bg-[#E5DBD3] h-6 w-full px-2 placeholder:text-white'
+                            className='bg-[#E5DBD3] h-8 w-full md:w-24 lg:w-full md:rounded-full px-2 focus:outline-0 placeholder:text-white'
                         />
                     </form>
                 </li>
@@ -81,7 +81,7 @@ const Header = (props) => {
                         <img 
                             src='/assets/images/account-icon.png'
                             alt='account button'
-                            className='w-6 h-6'
+                            className='w-6 h-6 lg:w-8 lg:h-8'
                         />
                     </button>
                     </Link>
