@@ -25,12 +25,12 @@ const Header = (props) => {
     }
   return (
     <Router >
-        <header className='flex justify-between items-center bg-[#FEF9F3] h-16 p-4 md:h-24'>
+        <header className='flex justify-between items-center bg-[#FEF9F3] h-16 p-4 md:h-24 lg:h-36'>
             <Link to="/">
             <img
             src='/assets/images/BroughtCargo-logo.png'
             alt='BroughtCargo Logo'
-            className='w-24 h-16 p-0 md:w-40 md:h-24 lg:w-56 lg:h-36'
+            className='w-32 h-20 p-0 md:w-40 md:h-24 lg:w-60 lg:h-40'
         />
         </Link>
         <nav className='md:flex text-black text-lg lg:text-2xl font-semibold'>
