@@ -5,7 +5,7 @@ import Header from './components/Header';
 const App = () => {
   return (
     <section>
-        < Header />
+        < Header username={'Njabulo'}/>
     </section>
   )
 }
