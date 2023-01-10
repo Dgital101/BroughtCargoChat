@@ -1,9 +1,10 @@
-import React from 'react'
+import { useLocation } from "react-router-dom";
 
 const Chat = () => {
-  return (
-    <div>Chat</div>
-  )
-}
+  const { state } = useLocation();
+  //const groupName = state.groupName;
+  console.log(state);
+  return <div>state</div>;
+};
 
-export default Chat
+export default Chat;

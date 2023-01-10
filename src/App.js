@@ -10,6 +10,7 @@ import ExploreGroups from "./pages/groups/ExploreGroups";
 import MyGroups from "./pages/groups/MyGroups";
 import Sell from "./pages/sell/Sell";
 import Account from "./pages/account/Account";
+import Chat from "./pages/chat/Chat";
 
 const App = () => {
   const username = "Njabulo";
@@ -26,6 +27,7 @@ const App = () => {
             <Route path="explore-groups" element={<ExploreGroups />}></Route>
             <Route path="create-group" element={<CreateGroup />}></Route>
           </Route>
+          <Route path="/groups/:id" element={<Chat />}></Route>
           <Route path="/sell" element={<Sell />}></Route>
           <Route path={`/account/:${username}`} element={<Account />}></Route>
         </Routes>

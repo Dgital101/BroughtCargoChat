@@ -1,13 +1,18 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Group = ({ groupData }) => {
+  const navigate = useNavigate();
+
   const joinGroup = (groupId) => {
     console.log("group joined");
     // members can join the group
   };
 
   const viewGroup = () => {
-    console.log("group viewed");
+    navigate(`/groups/${groupData.name}`, {
+      state: { groupData: groupData },
+    });
     // open the group view page
   };
   return (
