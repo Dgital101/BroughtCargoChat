@@ -1,13 +1,22 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = (props) => {
-  const [searchWord, setSearchWord] = useState();
+  const [searchWord, setSearchWord] = useState("");
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
+  const navigate = useNavigate();
 
   const searchSubmit = (event) => {
     event.preventDefault();
     //handle the form
+    // redirect to products and show search results
+    navigate("/deals", {
+      state: {
+        searchWord: searchWord,
+      },
+    });
+
+    setSearchWord("");
   };
 
   const toggleMenu = () => {

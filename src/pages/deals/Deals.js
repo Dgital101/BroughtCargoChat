@@ -1,9 +1,13 @@
-import React from 'react'
+import { useLocation } from "react-router-dom";
 
 const Deals = () => {
-  return (
-    <div>Deals</div>
-  )
-}
+  const { state } = useLocation();
 
-export default Deals
+  const showSearchResults = () => {
+    const queryWord = state.searchWord;
+    console.log(queryWord);
+  };
+  return <section>{showSearchResults()}</section>;
+};
+
+export default Deals;
