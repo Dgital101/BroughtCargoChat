@@ -5,7 +5,6 @@ const Deals = () => {
 
   const showSearchResults = () => {
     const queryWord = state.searchWord;
-    console.log(queryWord);
   };
   return <section>{showSearchResults()}</section>;
 };
