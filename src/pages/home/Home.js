@@ -76,11 +76,6 @@ const Home = () => {
             alt='trustee company'
             className='w-18 h-12 md:w-28 md:h-16 lg:w-40 lg:h-24'
           />
-          <img
-            src='/assets/images/home/trustee-logo.jfif'
-            alt='trustee company'
-            className='w-18 h-12 md:w-28 md:h-16 lg:w-40 lg:h-24'
-          />
         </section>
       </section>
     </main>
