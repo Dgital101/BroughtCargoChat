@@ -9,7 +9,7 @@ const MyGroups = () => {
     isMember: true,
   };
   return (
-    <div className="block md:flex justify-center flex-wrap">
+    <div className="absolute w-full block md:flex justify-center flex-wrap overflow-y-auto scrollbar-hide h-full">
       <Group groupData={groupData} />
       <Group groupData={groupData} />
       <Group groupData={groupData} />
@@ -19,7 +19,7 @@ const MyGroups = () => {
       <Group groupData={groupData} />
       <Group groupData={groupData} />
       <Group groupData={groupData} />
-      <Group groupData={groupData} />
+      <div className="h-48"></div>
     </div>
   );
 };

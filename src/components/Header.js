@@ -24,7 +24,7 @@ const Header = (props) => {
   };
   return (
     <section>
-      <header className="flex justify-between items-center bg-[#FEF9F3] h-16 p-4 md:h-24 lg:h-36">
+      <header className="flex justify-between items-center bg-[#FEF9F3] h-16 p-4 md:h-24 lg:h-36 fixed w-full">
         <Link to="/">
           <img
             src="/assets/images/BroughtCargo-logo.png"

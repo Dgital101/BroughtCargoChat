@@ -2,7 +2,7 @@ import { Link, Outlet } from "react-router-dom";
 
 const Groups = () => {
   return (
-    <section>
+    <section className="fixed top-16 w-full h-full">
       <nav className="px-6 block text-l md:text-xl lg:text-xxl">
         <ul className="block md:flex justify-between items-center ">
           <li className="flex justify-between items-center md:gap-6 md:mr-auto">
