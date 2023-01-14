@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom";
+import Products from "../products/Products";
 
 const Deals = () => {
   const { state } = useLocation();
@@ -6,7 +7,11 @@ const Deals = () => {
   const showSearchResults = () => {
     const queryWord = state.searchWord;
   };
-  return <section>{showSearchResults()}</section>;
+  return (
+    <section>
+      <Products />
+    </section>
+  );
 };
 
 export default Deals;
