@@ -16,7 +16,7 @@ import Signup from "./pages/signup/Signup";
 import Shipping from "./pages/shipping/Shipping";
 import Product from "./pages/product/Product";
 import Payment from "./pages/payment/Payment";
-import Cart from "./pages/cart/Cart"
+import Cart from "./pages/cart/Cart";
 
 const App = () => {
   const username = "Njabulo";
