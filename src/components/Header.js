@@ -37,7 +37,7 @@ const Header = (props) => {
           <ul
             className={
               displayMobileMenu
-                ? "absolute left-0 top-16 block w-full px-4 bg-[#FEF9F3]"
+                ? "absolute left-0 top-16 block w-full h-full px-4 bg-[#FEF9F3]"
                 : "hidden md:flex items-center gap-6"
             }>
             <li>

@@ -17,6 +17,7 @@ const App = () => {
   return (
     <Router>
       <Header username={username} />
+      {/* TODO : Fixed the header for mobile */}
       <main className="fixed left-0 top-16 md:top-24 lg:top-36 w-full h-full overflow-y-auto scrollbar-hide">
         <Routes>
           <Route path="/" element={<Home />}></Route>
