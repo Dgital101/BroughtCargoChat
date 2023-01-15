@@ -9,7 +9,7 @@ const ExploreGroups = () => {
     isMember: false,
   };
   return (
-    <div className="absolute w-full block md:flex justify-center flex-wrap overflow-y-auto scrollbar-hide h-full">
+    <div className="absolute w-full block md:flex justify-center flex-wrap overflow-y-auto scrollbar-hide">
       <Group groupData={groupData} />
       <Group groupData={groupData} />
       <Group groupData={groupData} />

@@ -1,11 +1,8 @@
 import { useEffect, useReducer } from "react";
 import axios from "axios";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import Product from "../../components/Product";
 import LoadingBox from "../../components/LoadingBox";
 import MessageBox from "../../components/MessageBox";
-import { Helmet } from "react-helmet-async";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -19,14 +16,15 @@ const reducer = (state, action) => {
       return state;
   }
 };
-function Products() {
-  // const [products, setProducts] = useState([]);
+const HotPicks = () => {
 
   const [{ loading, error, products }, dispatch] = useReducer(reducer, {
     products: [],
     loading: true,
     error: "",
   });
+
+
   useEffect(() => {
     const fetchData = async () => {
       dispatch({ type: "FETC_REQUEST" });
@@ -36,35 +34,28 @@ function Products() {
       } catch (err) {
         dispatch({ type: "FETCH_FAIL", payload: err.message });
       }
-
-      // setProducts(results.data);
     };
     fetchData();
   }, []);
 
   return (
-    <div>
-      <Helmet>
-        <title>Hot Picks</title>
-      </Helmet>
-      <h1> Hot Picks</h1>
-      <div className="products">
-        {loading ? (
-          <LoadingBox />
-        ) : error ? (
-          <MessageBox variant="danger">{error}</MessageBox>
-        ) : (
-          <Row style={{ height: "100px" }}>
-            {products.map((product) => (
-              <Col key={product.slug} sm={6} md={8} lg={3} className="mb-3">
-                <Product product={product}></Product>
-              </Col>
-            ))}
-          </Row>
-        )}
-      </div>
-    </div>
+    <section>
+        { 
+            loading ? <LoadingBox /> :
+            error ? 
+            <section className='flex justify-center m-8 mb-32 font-bold text-red-600'>
+                <MessageBox variant="danger">{error} !!!</MessageBox>
+            </section> :
+            <section className='flex'>
+                {
+                    products.map( product => {
+                        return <Product key={product.slug} product={product}/>
+                    })
+                }
+            </section>
+        }
+    </section>
   );
 }
 
-export default Products;
+export default HotPicks;

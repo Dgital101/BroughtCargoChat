@@ -1,5 +1,6 @@
 import { BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
+// import "./App.css";
 import Header from "./components/Header";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
@@ -24,7 +25,7 @@ const App = () => {
     <Router>
       <Header username={username} />
       {/* TODO : Fixed the header for mobile */}
-      <main className="fixed left-0 top-16 md:top-24 lg:top-36 w-full h-full overflow-y-auto scrollbar-hide">
+      <main className="fixed left-0 top-16 md:top-24 lg:top-36 w-full h-full">
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/deals/*" element={<Deals />}>
