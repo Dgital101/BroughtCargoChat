@@ -6,6 +6,7 @@ import Product from "../../components/Product";
 import LoadingBox from "../../components/LoadingBox";
 import MessageBox from "../../components/MessageBox";
 import { Helmet } from "react-helmet-async";
+import HotPicks from "./HotPicks"
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -43,27 +44,15 @@ function Products() {
   }, []);
 
   return (
-    <div>
+    <section>
       <Helmet>
-        <title>Hot Picks</title>
+        <title>Products</title>
       </Helmet>
-      <h1> Hot Picks</h1>
-      <div className="products">
-        {loading ? (
-          <LoadingBox />
-        ) : error ? (
-          <MessageBox variant="danger">{error}</MessageBox>
-        ) : (
-          <Row style={{ height: "100px" }}>
-            {products.map((product) => (
-              <Col key={product.slug} sm={6} md={8} lg={3} className="mb-3">
-                <Product product={product}></Product>
-              </Col>
-            ))}
-          </Row>
-        )}
-      </div>
-    </div>
+      <h1 className='text-3xl font-semibold text-center'>Products</h1>
+      <main>
+        <HotPicks/>
+      </main>
+    </section>
   );
 }
 

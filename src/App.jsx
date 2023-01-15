@@ -15,7 +15,7 @@ import Chat from "./pages/chat/Chat";
 import Signin from "./pages/signin/Signin";
 import Signup from "./pages/signup/Signup";
 import Shipping from "./pages/shipping/Shipping";
-import Product from "./pages/product/Product";
+import Product from "./components/Product";
 import Payment from "./pages/payment/Payment";
 import Cart from "./pages/cart/Cart";
 

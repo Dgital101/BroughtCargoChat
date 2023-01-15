@@ -40,6 +40,19 @@ const HotPicks = () => {
 
   return (
     <section>
+        <section>
+        <section className="flex items-center justify-center py-6 px-2">
+          <img
+            src="/assets/images/home/fire-icon.jfif"
+            alt="hot picks"
+            className="w-8 h-8 md:w-16 md:h-16 lg:h-20 lg:w-20"
+          />
+          <h1 className="text-lg font-semibold md:text-2xl lg:text-4xl">
+            Hot Picks
+          </h1>
+        </section>
+        <section>
+            </section>
         { 
             loading ? <LoadingBox /> :
             error ? 
@@ -54,7 +67,9 @@ const HotPicks = () => {
                 }
             </section>
         }
+        </section>
     </section>
+      
   );
 }
 
