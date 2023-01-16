@@ -18,29 +18,59 @@ const reducer = (state, action) => {
 };
 const HotPicks = () => {
 
-  const [{ loading, error, products }, dispatch] = useReducer(reducer, {
-    products: [],
-    loading: true,
-    error: "",
-  });
+  // const [{ loading, error, products }, dispatch] = useReducer(reducer, {
+  //   products: [],
+  //   loading: true,
+  //   error: "",
+  // });
 
 
-  useEffect(() => {
-    const fetchData = async () => {
-      dispatch({ type: "FETC_REQUEST" });
-      try {
-        const results = await axios.get("/api/products");
-        dispatch({ type: "FETCH_SUCCESS", payload: results.data });
-      } catch (err) {
-        dispatch({ type: "FETCH_FAIL", payload: err.message });
-      }
-    };
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     dispatch({ type: "FETC_REQUEST" });
+  //     try {
+  //       const results = await axios.get("/api/products");
+  //       dispatch({ type: "FETCH_SUCCESS", payload: results.data });
+  //     } catch (err) {
+  //       dispatch({ type: "FETCH_FAIL", payload: err.message });
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
+
+  // TODO : delete
+  const products = [
+    {
+        name: '32" LG TV',
+        slug: "lg-tv",
+        category: "TVs",
+        Image: "/assets/images/products/TV.jpeg",
+        price: 2500,
+        countInStock: 1,
+        brand: "Nike",
+        rating: 2.5,
+        numReviews: 75,
+        Description: "High Quality TV with 6 months warrant ",
+      },
+    {
+        name: '32" LG TV',
+        slug: "lg-tv",
+        category: "TVs",
+        Image: "/assets/images/products/TV.jpeg",
+        price: 2500,
+        countInStock: 0,
+        brand: "Nike",
+        rating: 2.5,
+        numReviews: 75,
+        Description: "High Quality TV with 6 months warrant ",
+      },
+      
+  ];
+  const loading = false;
+  const error = '';
 
   return (
-    <section>
-        <section>
+    <section className='w-full'>
         <section className="flex items-center justify-center py-6 px-2">
           <img
             src="/assets/images/home/fire-icon.jfif"
@@ -51,25 +81,21 @@ const HotPicks = () => {
             Hot Picks
           </h1>
         </section>
-        <section>
-            </section>
         { 
-            loading ? <LoadingBox /> :
-            error ? 
-            <section className='flex justify-center m-8 mb-32 font-bold text-red-600'>
-                <MessageBox variant="danger">{error} !!!</MessageBox>
-            </section> :
-            <section className='flex'>
-                {
-                    products.map( product => {
-                        return <Product key={product.slug} product={product}/>
-                    })
-                }
+          loading ? <LoadingBox /> :
+          error ? 
+          <section className='flex justify-center m-8 mb-32 font-bold text-red-600'>
+              <MessageBox variant="danger">{error} !!!</MessageBox>
+          </section> :
+            <section className='overflow-x-auto flex w-full h-full'>
+              {
+                products.map( (product, index) => {
+                  return <Product key={index} product={product}/>
+                })
+              }
             </section>
         }
-        </section>
     </section>
-      
   );
 }
 

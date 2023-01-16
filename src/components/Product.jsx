@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
 import axios from "axios";
 import { Store } from "../Store";
 
@@ -30,41 +29,37 @@ function Product(props) {
     });
   };
   return (
-    <div className="container ">
-      <Card className="card">
-        <div className="wishlist">
-          <i className={`fa ${color}`} onClick={() => setColor("fa-heart")}></i>
-        </div>
-        <Link to={`/product/${product.slug}`}>
-          <img
-            src={product.Image}
-            className="card-img-top"
-            alt={product.name}
-          />
-        </Link>
-        <Card.Body>
-          <Link to={`/product/${product.slug}`}>
-            <Card.Title className="prod-name">{product.name}</Card.Title>
-          </Link>
-          {/* <Rating rating={product.rating} numReviews={product.numReviews} /> */}
-          <Card.Text className="prod-price">
-            <small>R{product.price}</small>
-          </Card.Text>
+    <section className='cursor-pointer mx-4 my-4 p-4 rounded-md border-gray-400 border-[1px]'>
+      <div className="flex justify-end mx-4">
+           <i className={`fa ${color}`} onClick={() => setColor("fa-heart")}></i>
+      </div>
+      <Link to={`/deals/products/{product.slug}`}>
+        < img
+        alt={product.name}
+        src={product.Image}
+        className='w-full flex justify-center items-center'
+        />
+      </Link>
+      <section className='mx-6'>
+        <h1 className='font-lg font-extralight'>{product.name}</h1>
+        <small className='text-[#ffa500]'>R{product.price}</small>
+        <section className='mt-4'>
           {product.countInStock === 0 ? (
-            <Button variant="light" disabled>
-              {" "}
-              Sold Out
-            </Button>
-          ) : (
-            <div className="cart" onClick={() => addToCartHandler(product)}>
-              <small>
-                <i className="fa fa-shopping-cart" aria-hidden="true"></i> ADD{" "}
-              </small>
-            </div>
-          )}
-        </Card.Body>
-      </Card>
-    </div>
+             <button variant="light" disabled>
+               {" "}
+               Sold Out
+             </button>
+           ) : (
+             <div className="border-black border-2 rounded-full cursor-pointer flex justify-center py-4 " onClick={() => addToCartHandler(product)}>
+               <small>
+                 <i className="fa fa-shopping-cart" aria-hidden="true"></i> ADD{" "}
+               </small>
+             </div>
+           )}
+        </section>
+      </section>
+      
+    </section>
   );
 }
 
