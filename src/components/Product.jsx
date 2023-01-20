@@ -41,7 +41,7 @@ function Product(props) {
         />
       </Link>
       <section className='mx-6'>
-        <h1 className='font-lg font-extralight'>{product.name}</h1>
+        <h1 className='font-lg font-bold'>{product.name}</h1>
         <small className='text-[#ffa500]'>R{product.price}</small>
         <section className='mt-4'>
           {product.countInStock === 0 ? (

@@ -71,7 +71,7 @@ const HotPicks = () => {
 
   return (
     <section className='w-full'>
-        <section className="flex items-center justify-center py-6 px-2">
+        <section className="flex items-center justify-center pt-6 px-2">
           <img
             src="/assets/images/home/fire-icon.jfif"
             alt="hot picks"
@@ -87,7 +87,7 @@ const HotPicks = () => {
           <section className='flex justify-center m-8 mb-32 font-bold text-red-600'>
               <MessageBox variant="danger">{error} !!!</MessageBox>
           </section> :
-            <section className='overflow-x-auto flex w-full h-full'>
+            <section className='overflow-x-auto w-full h-full'>
               {
                 products.map( (product, index) => {
                   return <Product key={index} product={product}/>
