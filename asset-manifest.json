@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/BroughtCargoChat/static/css/main.e3d1c085.css",
-    "main.js": "/BroughtCargoChat/static/js/main.04bff03e.js",
+    "main.js": "/BroughtCargoChat/static/js/main.4f8b238c.js",
     "index.html": "/BroughtCargoChat/index.html",
     "main.e3d1c085.css.map": "/BroughtCargoChat/static/css/main.e3d1c085.css.map",
-    "main.04bff03e.js.map": "/BroughtCargoChat/static/js/main.04bff03e.js.map"
+    "main.4f8b238c.js.map": "/BroughtCargoChat/static/js/main.4f8b238c.js.map"
   },
   "entrypoints": [
     "static/css/main.e3d1c085.css",
-    "static/js/main.04bff03e.js"
+    "static/js/main.4f8b238c.js"
   ]
 }
