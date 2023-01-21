@@ -22,7 +22,7 @@ import Cart from "./pages/cart/Cart";
 const App = () => {
   const username = "Njabulo";
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Header username={username} />
       {/* TODO : Fixed the header for mobile */}
       <main className="fixed left-0 top-16 md:top-20 lg:top-30 w-full h-full">
