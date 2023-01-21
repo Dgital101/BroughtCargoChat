@@ -39,6 +39,7 @@ const App = () => {
           <Route path="/groups/:id" element={<Chat />}></Route>
           <Route path="/sell" element={<Sell />}></Route>
           <Route path={`/account/:${username}/*`} element={<Account />}>
+            <Route index element={<Signin />}></Route>
             <Route path={"shipping"} element={<Shipping />}></Route>
             <Route path={"payment"} element={<Payment />}></Route>
             <Route path={"cart"} element={<Cart />}></Route>
