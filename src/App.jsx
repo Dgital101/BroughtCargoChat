@@ -1,4 +1,5 @@
 import { BrowserRouter as Router } from "react-router-dom";
+import { useEffect } from 'react';
 import "./index.css";
 // import "./App.css";
 import Header from "./components/Header";
@@ -20,10 +21,23 @@ import Payment from "./pages/payment/Payment";
 import Cart from "./pages/cart/Cart";
 
 const App = () => {
-  const username = "Njabulo";
+  const user = {
+    firstName : 'Njabulo',
+    lastName : 'Masilela',
+    email : 'masilelanjabulo01@gmail.com',
+    password : 'whatever',
+    isAdmin : true,
+    isSeller : false,
+    isApproved : true,
+  }
+
+  useEffect( () => {
+    localStorage.setItem('userInfo', JSON.stringify(user));
+  }, []);
+
   return (
     <Router basename={process.env.PUBLIC_URL}>
-      <Header username={username} />
+      <Header user={user} />
       {/* TODO : Fixed the header for mobile */}
       <main className="fixed left-0 top-16 md:top-20 lg:top-30 w-full h-full">
         <Routes>
@@ -37,8 +51,8 @@ const App = () => {
             <Route path="create-group" element={<CreateGroup />}></Route>
           </Route>
           <Route path="/groups/:id" element={<Chat />}></Route>
-          <Route path="/sell" element={<Sell />}></Route>
-          <Route path={`/account/:${username}/*`} element={<Account />}>
+          <Route path="/sell" element={<Sell />} ></Route>
+          <Route path={`/account/:${user.email}/*`} element={<Account />}>
             <Route index element={<Signin />}></Route>
             <Route path={"shipping"} element={<Shipping />}></Route>
             <Route path={"payment"} element={<Payment />}></Route>

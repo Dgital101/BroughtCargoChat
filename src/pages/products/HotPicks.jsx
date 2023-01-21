@@ -73,7 +73,7 @@ const HotPicks = () => {
     <section className='w-full'>
         <section className="flex items-center justify-center pt-6 px-2">
           <img
-            src="/assets/images/home/fire-icon.jfif"
+            src="./assets/images/home/fire-icon.jfif"
             alt="hot picks"
             className="w-8 h-8 md:w-12 md:h-12"
           />
