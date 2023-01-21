@@ -63,9 +63,9 @@ const HotPicks = () => {
         rating: 2.5,
         numReviews: 75,
         Description: "High Quality TV with 6 months warrant ",
-      },
-      
+      }
   ];
+  const productElements = products.map( (product, index) => { return <Product key={index} product={product}/> })
   const loading = false;
   const error = '';
 
@@ -75,7 +75,7 @@ const HotPicks = () => {
           <img
             src="/assets/images/home/fire-icon.jfif"
             alt="hot picks"
-            className="w-8 h-8 md:w-16 md:h-16 lg:h-20 lg:w-20"
+            className="w-8 h-8 md:w-12 md:h-12"
           />
           <h1 className="text-lg font-semibold md:text-2xl lg:text-4xl">
             Hot Picks
@@ -87,11 +87,9 @@ const HotPicks = () => {
           <section className='flex justify-center m-8 mb-32 font-bold text-red-600'>
               <MessageBox variant="danger">{error} !!!</MessageBox>
           </section> :
-            <section className='overflow-x-auto w-full h-full'>
+            <section className='overflow-x-auto flex flex-wrap'>
               {
-                products.map( (product, index) => {
-                  return <Product key={index} product={product}/>
-                })
+                productElements
               }
             </section>
         }

@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 const Sell = () => {
-  return (
-    <div>Sell</div>
-  )
-}
+	return (
+		<div className="h-full flex text-center justify-center items-center text-2xl font-bold">
+			You are not authorised to access page
+		</div>
+	);
+};
 
-export default Sell
+export default Sell;

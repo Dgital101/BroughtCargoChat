@@ -15,7 +15,7 @@ import Chat from "./pages/chat/Chat";
 import Signin from "./pages/signin/Signin";
 import Signup from "./pages/signup/Signup";
 import Shipping from "./pages/shipping/Shipping";
-import Product from "./components/Product";
+import Product from './pages/product/Product'
 import Payment from "./pages/payment/Payment";
 import Cart from "./pages/cart/Cart";
 
@@ -25,12 +25,11 @@ const App = () => {
     <Router>
       <Header username={username} />
       {/* TODO : Fixed the header for mobile */}
-      <main className="fixed left-0 top-16 md:top-24 lg:top-36 w-full h-full">
+      <main className="fixed left-0 top-16 md:top-20 lg:top-30 w-full h-full">
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/deals/*" element={<Deals />}>
-            <Route path="product/:slug" element={<Product />}></Route>
-          </Route>
+          <Route path="/deals/*" element={<Deals />}></Route>
+          <Route path="/product/:slug" element={<Product />}></Route>
           <Route path="/groups/*" element={<Groups />}>
             <Route index element={<MyGroups />}></Route>
             <Route path="my-groups" element={<MyGroups />}></Route>
@@ -46,7 +45,6 @@ const App = () => {
           </Route>
           <Route path={"/signin"} element={<Signin />}></Route>
           <Route path={"/signup"} element={<Signup />}></Route>
-        
         </Routes>
       </main>
     </Router>
